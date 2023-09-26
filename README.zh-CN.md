@@ -1,7 +1,3 @@
-<p align='center'>
-  <img src='https://user-images.githubusercontent.com/11247099/111864893-a457fd00-899e-11eb-9f05-f4b88987541d.png' alt='Vitesse - Opinionated Vite Starter Template' width='600'/>
-</p>
-
 <h6 align='center'>
 <a href="https://vitesse-lite.netlify.app/">在线 Demo</a>
 </h6>
@@ -9,12 +5,6 @@
 <h5 align='center'>
 <b>轻量版的 <a href="https://github.com/antfu/vitesse">Vitesse</a></b>
 </h5>
-
-<br>
-
-<p align='center'>
-<a href="https://github.com/antfu/vitesse-lite/blob/main/README.md">English</a> | <b>简体中文</b>
-</p>
 
 <br>
 
@@ -69,19 +59,3 @@
 - [`unplugin-vue-components`](https://github.com/antfu/unplugin-vue-components) - 自动加载组件
 - [`unplugin-vue-macros`](https://github.com/sxzz/unplugin-vue-macros) - 探索并扩展更多的宏和语法糖到 Vue 中
 - [VueUse](https://github.com/antfu/vueuse) - 实用的 Composition API 工具合集
-
-## 现在可以试试!
-
-### GitHub 模板
-
-[使用这个模板创建仓库](https://github.com/antfu/vitesse-lite/generate).
-
-### 克隆到本地
-
-如果您更喜欢使用更干净的 git 历史记录手动执行此操作
-
-```bash
-npx degit antfu/vitesse-lite my-vitesse-app
-cd my-vitesse-app
-pnpm i # 如果你没装过 pnpm, 可以先运行: npm install -g pnpm
-```
