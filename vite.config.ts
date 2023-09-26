@@ -12,6 +12,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
+      '@': `${path.resolve(__dirname, './src')}/`,
     },
   },
   plugins: [
@@ -27,23 +28,23 @@ export default defineConfig({
         }),
       },
     }),
-    // https://github.com/antfu/unplugin-auto-import
+    // 自动导入模块 https://github.com/antfu/unplugin-auto-import
     AutoImport({
-      imports: [
+      imports: [ // 自动导入的模块
         'vue',
         'vue-router',
         '@vueuse/core',
       ],
-      dts: true,
-      dirs: [
+      dts: 'src/type/auto-import.d.ts', // 生成的dts文件
+      dirs: [ // 自动导入的模块的目录
         './src/composables',
       ],
-      vueTemplate: true,
+      vueTemplate: true, // 自动导入的模块是否是vue组件
     }),
 
-    // https://github.com/antfu/vite-plugin-components
+    // 自动导入组件 https://github.com/antfu/vite-plugin-components
     Components({
-      dts: true,
+      dts: 'src/type/components.d.ts', // 生成的dts文件
     }),
 
     // https://github.com/antfu/unocss
