@@ -6,4 +6,6 @@ const router = createRouter({
   routes,
 })
 
+// TODO: 封装路由守卫和路由拦截器
+
 export default router

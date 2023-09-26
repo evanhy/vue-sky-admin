@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.4.1",
+    "ant-design-vue": "4.x",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
   },

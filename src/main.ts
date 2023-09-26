@@ -3,7 +3,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
-import '@unocss/reset/tailwind.css'
+// 使用 tailwindcss-compat 重置样式 避免与 Ant Design Vue 冲突 导致按钮透明
+import '@unocss/reset/tailwind-compat.css'
 import './styles/main.css'
 import 'uno.css'
 
