@@ -1,10 +1,19 @@
 # vue-sky-admin
 
-> Vue3 + Ts + Element Plus + Vite + Unocss + Mockjs + Axios + Vue Router + Echarts
+> Vue3 + Ts + Element Plus + Vite + Unocss + Vue Router
 
 + `unplugin-auto-import` - 直接使用 Composition API 等，无需导入
 + `unplugin-vue-components` - 自动加载组件
 + `unplugin-vue-macros` - 探索并扩展更多的宏和语法糖到 Vue 中
+
+### unplugin-auto-import
+> 自动导入模块
+> [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import)
+
+### unplugin-vue-components
+> 自动导入组件
+> [unplugin-vue-components](https://github.com/antfu/vite-plugin-components)
+
 
 ### taze
 [antfu-taze](https://github.com/antfu/taze)
