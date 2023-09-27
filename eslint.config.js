@@ -11,4 +11,10 @@ export default antfu(
     },
     rules: plugin.configs.recommended.rules,
   },
+  {
+    rules: {
+      'no-console': 'warn',
+      'antfu/top-level-function': 'off',
+    },
+  },
 )

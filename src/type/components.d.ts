@@ -8,9 +8,12 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     404: typeof import('./../components/404.vue')['default']
-    AButton: typeof import('ant-design-vue/es')['Button']
-    ASpace: typeof import('ant-design-vue/es')['Space']
+    ElButton: typeof import('element-plus/es')['ElButton']
+    ElForm: typeof import('element-plus/es')['ElForm']
+    ElFormItem: typeof import('element-plus/es')['ElFormItem']
+    ElInput: typeof import('element-plus/es')['ElInput']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TheCounter: typeof import('./../components/TheCounter.vue')['default']
   }
 }

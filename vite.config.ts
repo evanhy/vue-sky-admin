@@ -4,8 +4,8 @@ import path from 'node:path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
-import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 import AutoImport from 'unplugin-auto-import/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import UnoCSS from 'unocss/vite'
 import VueMacros from 'unplugin-vue-macros/vite'
 
@@ -40,14 +40,16 @@ export default defineConfig({
       dirs: [ // 自动导入的模块的目录
         './src/composables',
       ],
-      vueTemplate: true, // 自动导入的模块是否是vue组件
+      resolvers: [
+        ElementPlusResolver(),
+      ],
     }),
 
     // 自动导入组件 https://github.com/antfu/vite-plugin-components
     Components({
       dts: 'src/type/components.d.ts', // 生成的dts文件
       resolvers: [
-        AntDesignVueResolver({ importStyle: 'less' }),
+        ElementPlusResolver(),
       ],
       dirs: [
         './src/components',
