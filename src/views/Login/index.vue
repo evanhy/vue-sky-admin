@@ -21,7 +21,7 @@ const { loginRef, loginForm, loginRules, login } = useLogin()
       >
         <Motion>
           <h1 class="my-10 text-4xl font-bold text-gray">
-            <TypeIt values="SKYADMIN" :cursor="false" :speed="150" />
+            <TypeIt :values="['SKYADMIN']" :cursor="false" :speed="150" />
           </h1>
         </Motion>
         <Motion :delay="100">
