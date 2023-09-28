@@ -7,7 +7,7 @@ defineOptions({
 <template>
   <div>
     <el-card>
-      <div class="h-600">
+      <div class="h-100">
         Home
       </div>
     </el-card>
