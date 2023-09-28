@@ -1,20 +1,9 @@
 export default [
-  {
-    path: '/',
-    redirect: '/home',
-  },
-  {
-    path: '/home',
-    name: 'home',
-    component: () => import('@/views/index.vue'),
-    meta: {
-      title: '首页',
-    },
-  },
+
   {
     path: '/login',
     name: 'login',
-    component: () => import('@/views/login/index.vue'),
+    component: () => import('@/views/Login/index.vue'),
     meta: {
       title: '登录',
     },
@@ -23,4 +12,4 @@ export default [
     path: '/:pathMatch(.*)',
     component: () => import('@/components/404.vue'),
   },
-]
+] as RouteConfigsTable[]
