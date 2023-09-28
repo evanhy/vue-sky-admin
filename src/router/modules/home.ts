@@ -8,7 +8,7 @@ export default {
     {
       path: '/home',
       name: 'home',
-      component: () => import('@/views/Home/index.vue'),
+      component: () => import('@/views/home/index.vue'),
       meta: {
         title: '首页',
         icon: 'i-carbon:home',

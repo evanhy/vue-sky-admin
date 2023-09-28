@@ -13,7 +13,7 @@ export default {
     {
       path: '/components/message',
       name: 'Message',
-      component: () => import('@/views/Components/Message.vue'),
+      component: () => import('@/views/components/Message.vue'),
       meta: {
         title: 'Message',
       },
@@ -21,7 +21,7 @@ export default {
     {
       path: '/components/dialog',
       name: 'Dialog',
-      component: () => import('@/views/Components/Dialog.vue'),
+      component: () => import('@/views/components/Dialog.vue'),
       meta: {
         title: 'Dialog',
       },
@@ -29,7 +29,7 @@ export default {
     {
       path: '/components/video',
       name: 'Video',
-      component: () => import('@/views/Components/Video.vue'),
+      component: () => import('@/views/components/Video.vue'),
       meta: {
         title: 'Video',
         showLink: false,
