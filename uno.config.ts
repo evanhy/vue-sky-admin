@@ -18,6 +18,15 @@ export default defineConfig({
     }),
   ],
   transformers: [transformerDirectives()],
+  content: {
+    pipeline: {
+      // 解决动态图标无法显示的问题 https://unocss-study-examples.netlify.app/#/CSSIcon
+      include: [
+        /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
+        'src/router/**/*.ts',
+      ],
+    },
+  },
   shortcuts: {
     'flex-c': 'flex justify-center items-center',
     'flex-bc': 'flex justify-between items-center',
