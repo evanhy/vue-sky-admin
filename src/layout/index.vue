@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { constantMenus } from '@/router/utils'
+import LayoutHeader from '@/layout/components/LayoutHeader.vue'
 
 defineOptions({
   name: 'Layout',
@@ -7,7 +8,7 @@ defineOptions({
 const route = useRoute()
 const defaultActive = ref('/home')
 
-onMounted(() => {
+watchEffect(() => {
   defaultActive.value = route.path
 })
 </script>
@@ -20,7 +21,7 @@ onMounted(() => {
         <div class="h-12 flex-c cursor-pointer pl-12px text-2xl text-white" @click="$router.push('/')">
           SKYADMIN
         </div>
-        <el-scrollbar wrap-class="scrollbar-wrapper" class="!overflow-auto">
+        <el-scrollbar class="!overflow-auto">
           <!--     TODO: 现在的路由先写死, 后面需要根据路由动态生成     -->
           <el-menu router :default-active="defaultActive">
             <el-menu-item v-for="menu in constantMenus" :key="menu.path" :index="menu.path">
@@ -36,13 +37,13 @@ onMounted(() => {
 
     <el-container>
       <el-header>
-        <div>
-          Header
-        </div>
+        <LayoutHeader />
       </el-header>
 
       <el-main>
-        <router-view />
+        <div class="min-h-[calc(100vh-48px)] bg-[#F0F2F5] p-4">
+          <router-view />
+        </div>
       </el-main>
     </el-container>
   </el-container>

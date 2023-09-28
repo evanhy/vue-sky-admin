@@ -4,5 +4,6 @@ export default {
   component: () => import('@/views/Playground/index.vue'),
   meta: {
     title: 'Playground',
+    icon: 'i-carbon:game-console',
   },
 } as RouteConfigsTable

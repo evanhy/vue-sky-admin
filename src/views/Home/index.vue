@@ -6,7 +6,11 @@ defineOptions({
 
 <template>
   <div>
-    Home
+    <el-card>
+      <div class="h-600">
+        Home
+      </div>
+    </el-card>
   </div>
 </template>
 

@@ -1,8 +1,5 @@
 .layout-container .el-header {
-  height: 48px;
-  line-height: 48px;
   border-bottom: 1px solid #ebeef5;
-  box-shadow: 0 1px 3px 0 rgba(26, 26, 26, 0.1);
 }
 
 .layout-container .el-main {
@@ -21,12 +18,10 @@
   background: #344a53;
   box-shadow: 0 0 1px #888;
 
-  .scrollbar-wrapper {
-    overflow-x: hidden !important;
-  }
 
   .el-scrollbar {
     height: calc(100% - 48px);
+    overflow-x: hidden !important;
   }
 
   .el-menu {

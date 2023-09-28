@@ -5,8 +5,12 @@ export default defineConfig({
     presetUno(),
     presetAttributify(),
     presetIcons({
-      scale: 1.2,
       warn: true,
+      extraProperties: {
+        'display': 'inline-block',
+        'vertical-align': 'middle',
+      },
+      scale: 1.2,
     }),
     presetWebFonts({
       // fonts: {
