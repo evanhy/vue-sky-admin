@@ -4,6 +4,12 @@ import { constantMenus } from '@/router/utils'
 defineOptions({
   name: 'Layout',
 })
+const route = useRoute()
+const defaultActive = ref('/home')
+
+onMounted(() => {
+  defaultActive.value = route.path
+})
 </script>
 
 <template>
@@ -16,7 +22,7 @@ defineOptions({
         </div>
         <el-scrollbar wrap-class="scrollbar-wrapper" class="!overflow-auto">
           <!--     TODO: 现在的路由先写死, 后面需要根据路由动态生成     -->
-          <el-menu router default-active="/home">
+          <el-menu router :default-active="defaultActive">
             <el-menu-item v-for="menu in constantMenus" :key="menu.path" :index="menu.path">
               <template #title>
                 <i :class="menu.meta.icon" class="mr-5px" />
