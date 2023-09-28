@@ -27,6 +27,7 @@ const processDynamicRoutes = () => {
 processDynamicRoutes()
 
 // 菜单格式的数组
+// @unocss-include
 const constantMenus = [] as any[]
 
 /**
@@ -40,7 +41,7 @@ const constantMenus = [] as any[]
  * @param routes 动态路由
  * @return 菜单格式的数组
  */
-function handleDynamicRoutes(routes: any[]) {
+const handleDynamicRoutes = (routes: any[]) => {
   routes.forEach((route) => {
     const hasChildren = route.children && route.children.length > 0
     if (hasChildren) {
