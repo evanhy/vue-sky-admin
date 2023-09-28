@@ -84,6 +84,7 @@ declare global {
       hiddenTag?: boolean
       /** 动态路由可打开的最大数量 `可选` */
       dynamicLevel?: number
+      rank?: number
     }
     /** 子路由配置项 */
     children?: Array<RouteChildrenConfigsTable>

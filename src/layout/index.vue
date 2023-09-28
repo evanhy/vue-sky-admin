@@ -24,12 +24,25 @@ watchEffect(() => {
         <el-scrollbar class="!overflow-auto">
           <!--     TODO: 现在的路由先写死, 后面需要根据路由动态生成     -->
           <el-menu router :default-active="defaultActive">
-            <el-menu-item v-for="menu in constantMenus" :key="menu.path" :index="menu.path">
-              <template #title>
-                <i :class="menu.meta.icon" class="mr-5px" />
-                <span>{{ menu.meta.title }}</span>
-              </template>
-            </el-menu-item>
+            <template v-for="menu in constantMenus" :key="menu.path">
+              <el-menu-item v-if="!menu.children" :index="menu.path">
+                <template #title>
+                  <i :class="menu.meta.icon" class="mr-5px" />
+                  <span>{{ menu.meta.title }}</span>
+                </template>
+              </el-menu-item>
+              <el-sub-menu v-else :index="menu.path">
+                <template #title>
+                  <i :class="menu.meta.icon" class="mr-5px" />
+                  <span>{{ menu.meta.title }}</span>
+                </template>
+                <el-menu-item v-for="child in menu.children" :key="child.path" :index="child.path">
+                  <template #title>
+                    <span>{{ child.meta.title }}</span>
+                  </template>
+                </el-menu-item>
+              </el-sub-menu>
+            </template>
           </el-menu>
         </el-scrollbar>
       </div>

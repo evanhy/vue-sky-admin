@@ -1,3 +1,5 @@
+import { home } from '@/router/enums'
+
 export default {
   path: '/',
   component: () => import('@/layout/index.vue'),
@@ -10,6 +12,7 @@ export default {
       meta: {
         title: '首页',
         icon: 'i-carbon:home',
+        rank: home,
       },
     },
   ],

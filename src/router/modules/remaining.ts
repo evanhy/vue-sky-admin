@@ -1,3 +1,5 @@
+import { playgroud } from '@/router/enums'
+
 export default {
   path: '/playground',
   name: 'Playground',
@@ -5,5 +7,6 @@ export default {
   meta: {
     title: 'Playground',
     icon: 'i-carbon:game-console',
+    rank: playgroud,
   },
 } as RouteConfigsTable
