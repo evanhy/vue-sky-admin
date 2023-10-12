@@ -1,5 +1,8 @@
 # vue-sky-admin
 
+### 文档地址
+[文档](https://verdant-florentine-08a745.netlify.app/guide/start)
+
 > Vue3 + Ts + Element Plus + Vite + Unocss + Vue Router
 
 + `unplugin-auto-import` - 直接使用 Composition API 等，无需导入
