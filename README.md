@@ -1,7 +1,7 @@
 # vue-sky-admin
 
-### 文档地址
-[文档](https://verdant-florentine-08a745.netlify.app/guide/start)
+
+[文档地址](https://earnest-sorbet-6777f5.netlify.app/)
 
 > Vue3 + Ts + Element Plus + Vite + Unocss + Vue Router
 
