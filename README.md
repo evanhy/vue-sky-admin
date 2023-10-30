@@ -39,11 +39,16 @@ pnpm run up
 
 
 ### commmit规范
+> 本项目 commit 必须遵循下面的规范
 
-+ feat: 新特性
-+ fix: 修改问题
-+ refactor: 代码重构
-+ docs: 文档修改
-+ style: 代码格式修改, 注意不是 css 修改
-+ test: 测试用例修改
-+ chore: 其他修改, 比如构建流程, 依赖管理.
++ feat: 新增功能
++ fix: 修复bug
++ docs: 文档更新
++ style:  代码格式修改
++ refactor:  重构代码
++ test:  测试用例修改
++ build:  构建系统或包依赖修改
++ ci:  CI/CD 配置修改
++ chore:  其他杂项修改
++ revert:  回滚到上一版本
++ perf:  性能优化
