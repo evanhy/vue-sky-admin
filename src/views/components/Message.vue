@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { h } from 'vue'
-import { closeAllMessage, message } from '@/composables/message'
+import { closeAllMessage, message } from '@/utils/message'
 
 defineOptions({
   name: 'Message',

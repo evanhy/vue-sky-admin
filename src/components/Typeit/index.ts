@@ -1,7 +1,8 @@
+// 打字机效果组件（简单封装，更多配置项参考 https://www.typeitjs.com/docs/vanilla/usage#options）
+
 import { defineComponent, h } from 'vue'
 import TypeIt from 'typeit'
 
-// 打字机效果组件（简单封装，更多配置项参考 https://www.typeitjs.com/docs/vanilla/usage#options）
 export default defineComponent({
   name: 'TypeIt',
   props: {

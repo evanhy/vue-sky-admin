@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import cat from '@/assets/svg/cat.svg'
-import Motion from '@/composables/motion'
-import TypeIt from '@/composables/typeit'
+import Motion from '@/utils/motion'
+import TypeIt from '@/components/Typeit'
 
 const { loginRef, loginForm, loginRules, login } = useLogin()
 </script>

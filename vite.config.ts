@@ -37,7 +37,6 @@ export default defineConfig({
       ],
       dts: 'src/type/auto-import.d.ts', // 生成的dts文件
       dirs: [ // 自动导入的模块的目录
-        './src/composables',
         './src/hooks',
         './src/utils',
       ],
