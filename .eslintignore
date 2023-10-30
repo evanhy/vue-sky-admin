@@ -1,0 +1,9 @@
+public
+dist
+*.d.ts
+/src/assets
+package.json
+eslint.config.js
+.prettierrc.js
+.commitlintrc.cjs
+uno.config.ts
