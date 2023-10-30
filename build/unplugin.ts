@@ -5,7 +5,8 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import UnoCSS from 'unocss/vite'
 
-export function getPluginsList() {
+export function getPluginsList(command: string) {
+  console.log(command, 'command')
   return [
     VueMacros({
       defineOptions: false,

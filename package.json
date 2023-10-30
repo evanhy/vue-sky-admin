@@ -1,10 +1,17 @@
 {
+  "name": "vue-sky-admin",
   "type": "module",
   "private": true,
   "packageManager": "pnpm@8.7.6",
+  "license": "MIT",
+  "author": {
+    "name": "EvanSky",
+    "email": "yhu8836@gmail.com",
+    "url": "https://www.huyu001.top"
+  },
   "scripts": {
     "build": "vite build",
-    "dev": "vite --port 3333 --open",
+    "dev": "vite",
     "lint": "eslint --cache --max-warnings 0  \"{src,mock,build}/**/*.{vue,js,ts,tsx}\" --fix",
     "typecheck": "vue-tsc --noEmit",
     "preview": "vite preview",

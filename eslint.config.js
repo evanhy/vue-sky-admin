@@ -13,8 +13,9 @@ export default antfu(
   },
   {
     rules: {
-      'no-console': 'warn',
+      'no-console': 'off',
       'antfu/top-level-function': 'off',
+      'node/prefer-global/process': 'off',
     },
   },
 )
