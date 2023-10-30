@@ -58,6 +58,12 @@ devDependencies:
   eslint-define-config:
     specifier: ^1.23.0
     version: 1.23.0
+  husky:
+    specifier: ^8.0.3
+    version: registry.npmmirror.com/husky@8.0.3
+  husky-init:
+    specifier: ^8.0.0
+    version: registry.npmmirror.com/husky-init@8.0.0
   jsdom:
     specifier: ^22.1.0
     version: 22.1.0
@@ -73,9 +79,6 @@ devDependencies:
   sass-loader:
     specifier: ^13.3.2
     version: registry.npmmirror.com/sass-loader@13.3.2(sass@1.68.0)(webpack@5.88.2)
-  simple-git-hooks:
-    specifier: ^2.9.0
-    version: 2.9.0
   taze:
     specifier: ^0.11.2
     version: 0.11.2
@@ -4160,12 +4163,6 @@ packages:
       - supports-color
     dev: true
 
-  /simple-git-hooks@2.9.0:
-    resolution: {integrity: sha512-waSQ5paUQtyGC0ZxlHmcMmD9I1rRXauikBwX31bX58l5vTOhCEcBC5Bi+ZDkPXTjDnZAF8TbCqKBY+9+sVPScw==}
-    hasBin: true
-    requiresBuild: true
-    dev: true
-
   /sirv@2.0.3:
     resolution: {integrity: sha512-O9jm9BsID1P+0HOi81VpXPoDxYP374pkOLzACAoyUQ/3OUVndNpsz6wMnY2z+yOxzbllCKZrM+9QrWsv4THnyA==}
     engines: {node: '>= 10'}
@@ -7080,6 +7077,24 @@ packages:
       debug: registry.npmmirror.com/debug@4.3.4
     transitivePeerDependencies:
       - supports-color
+
+  registry.npmmirror.com/husky-init@8.0.0:
+    resolution: {integrity: sha512-P9qq7eOInj853p57QhK/QDKahx8Vd+hWWmzA+N+Q3/dsHH+DFUeRurRd6ZSFzF1Ol/6yUS+fa9yMw5Dao0pxxw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/husky-init/-/husky-init-8.0.0.tgz}
+    name: husky-init
+    version: 8.0.0
+    engines: {node: '>=14'}
+    hasBin: true
+    dependencies:
+      husky: registry.npmmirror.com/husky@8.0.3
+    dev: true
+
+  registry.npmmirror.com/husky@8.0.3:
+    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/husky/-/husky-8.0.3.tgz}
+    name: husky
+    version: 8.0.3
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
 
   registry.npmmirror.com/ignore@5.2.4:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ignore/-/ignore-5.2.4.tgz}
