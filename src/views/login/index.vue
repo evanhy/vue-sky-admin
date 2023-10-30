@@ -7,7 +7,7 @@ const { loginRef, loginForm, loginRules, login } = useLogin()
 </script>
 
 <template>
-  <div class="h-screen w-screen overflow-hidden">
+  <div class="login-container">
     <img src="/bg.png" alt="" class="fixed bottom-0 left-0 z--1 h-full">
     <div class="absolute bottom-0 left-0 hidden h-100 w-100 sm:block">
       <img
@@ -17,7 +17,7 @@ const { loginRef, loginForm, loginRules, login } = useLogin()
     </div>
     <div class="float-right h-full flex items-center p-30 text-center">
       <div
-        class="w-60 sm:w-100"
+        class="w-60 rounded-4 p-10 shadow-xl sm:w-100"
       >
         <Motion>
           <h1 class="my-10 text-4xl font-bold text-gray">
@@ -30,22 +30,14 @@ const { loginRef, loginForm, loginRules, login } = useLogin()
               <el-input
                 v-model="loginForm.username"
                 placeholder="账号"
-              >
-                <template #prepend>
-                  <span class="i-carbon:user" />
-                </template>
-              </el-input>
+              />
             </el-form-item>
             <el-form-item label="" prop="password">
               <el-input
                 v-model="loginForm.password"
                 placeholder="密码"
                 type="password"
-              >
-                <template #prepend>
-                  <span class="i-carbon:password" />
-                </template>
-              </el-input>
+              />
             </el-form-item>
             <el-form-item>
               <el-button type="primary" class="w-full" @click="login(loginForm)">
@@ -58,3 +50,10 @@ const { loginRef, loginForm, loginRules, login } = useLogin()
     </div>
   </div>
 </template>
+
+<style scoped lang="scss">
+.login-container {
+  --at-apply:  h-screen w-screen overflow-hidden;
+  background: url("/src/assets/svg/login-background.svg") no-repeat center top;
+}
+</style>

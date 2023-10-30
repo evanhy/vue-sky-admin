@@ -9,6 +9,7 @@ defineOptions({
     <el-card>
       <div class="h-100">
         Home
+        <span class="i-carbon:user" />
       </div>
     </el-card>
   </div>
