@@ -10,6 +10,6 @@ export default [
   },
   {
     path: '/:pathMatch(.*)',
-    component: () => import('@/components/404.vue'),
+    component: () => import('@/views/error/404.vue'),
   },
 ] as RouteConfigsTable[]
