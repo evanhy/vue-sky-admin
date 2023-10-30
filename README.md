@@ -26,14 +26,17 @@
 pnpm run up
 ```
 
-### simple-git-hooks
-[typicode/simple-git-hooks](https://github.com/toplenboren/simple-git-hooks)
-> 在git commit之前，执行lint-staged
-
-
 ### lint-staged
 [okonet/lint-staged](https://github.com/okonet/lint-stagedhttps://github.com/okonet/lint-staged)
 > 在git commit之前，执行eslint
+
+### husky
+> git hooks 工具
+> 主要作用在于提交代码前为我们做一些事情，如格式化、检查提交规范等（需要先初始化git）
+
+### commitlint
+> 提交代码时的规范名称检查
+
 
 ### commmit规范
 
