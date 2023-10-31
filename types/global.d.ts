@@ -107,11 +107,21 @@ declare global {
    * @see {@link https://yiming_chang.gitee.io/pure-admin-doc/pages/config/#%E5%85%B7%E4%BD%93%E9%85%8D%E7%BD%AE}
    */
   interface ViteEnv {
+    // 本地运行端口号
     VITE_PORT: number
+    // 项目部署基础路径
     VITE_PUBLIC_PATH: string
+    // 路由模式
     VITE_ROUTER_HISTORY: string
+    // 是否启用CDN
     VITE_CDN: boolean
+    // 是否启用Gzip压缩
     VITE_COMPRESSION: ViteCompression
+    // proxy代理配置
     VITE_PROXY: [string, string][]
+    // baseApi
+    VITE_APP_BASE_API: string
+    // baseApiTest
+    VITE_APP_BASE_API_TEST: string
   }
 }
