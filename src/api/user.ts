@@ -1,8 +1,7 @@
-export function getUsers(data = {}) {
+export function getUsers() {
   return request({
     url: '/users',
     method: 'get',
-    data,
   })
 }
 

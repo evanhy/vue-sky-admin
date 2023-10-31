@@ -1,11 +1,23 @@
 <script setup lang='ts'>
+import { getUsers } from '@/api/user'
+
 defineOptions({
   name: 'Home',
 })
 
-lStorage.set('name', 'zhangsan')
+const testFn = async () => {
+  try {
+    const res = await getUsers()
+    console.log(res)
+    if (res.code === 200)
+      message('成功了', { type: 'success' })
+  }
+  catch (e) {
+    console.log(e)
+  }
+}
 
-console.log(lStorage.get('name'))
+testFn()
 </script>
 
 <template>

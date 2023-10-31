@@ -16,6 +16,7 @@ export default antfu(
       'no-console': 'off',
       'antfu/top-level-function': 'off',
       'node/prefer-global/process': 'off',
+      'prefer-promise-reject-errors': 'off',
     },
   },
 )

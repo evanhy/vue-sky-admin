@@ -123,5 +123,7 @@ declare global {
     VITE_APP_BASE_API: string
     // baseApiTest
     VITE_APP_BASE_API_TEST: string
+    // 是否使用mock
+    VITE_APP_USE_MOCK: boolean
   }
 }

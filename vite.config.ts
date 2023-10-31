@@ -14,7 +14,8 @@ const root: string = process.cwd()
 // https://github.com/pure-admin/vue-pure-admin/blob/main/vite.config.ts
 // https://github.com/KYX1234/Element-Admin/blob/master/vite.config.ts
 export default ({ command, mode }: ConfigEnv): UserConfigExport => {
-  const { VITE_PORT, VITE_PROXY } = warpperEnv(loadEnv(mode, root))
+  const viteEnv = warpperEnv(loadEnv(mode, root))
+  const { VITE_PORT, VITE_PROXY } = viteEnv
 
   return {
     resolve: {
@@ -31,7 +32,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
       // 本地开发跨域代理 https://cn.vitejs.dev/config/server-options.html#server-proxy
       proxy: createProxy(VITE_PROXY),
     },
-    plugins: getPluginsList(command),
+    plugins: getPluginsList(command, viteEnv),
 
     // https://github.com/vitest-dev/vitest
     test: {

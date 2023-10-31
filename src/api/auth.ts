@@ -1,4 +1,4 @@
-export const login = (data: any) => {
+export const fetchLogin = (data: any) => {
   return request({
     url: '/auth/login',
     method: 'post',

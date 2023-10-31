@@ -10,7 +10,9 @@ export function createAxios(options = {}) {
     ...defaultOptions,
     ...options,
   })
+  // 请求拦截器
   service.interceptors.request.use(reqResolve, reqReject)
+  // 响应拦截器
   service.interceptors.response.use(resResolve, resReject)
   return service
 }

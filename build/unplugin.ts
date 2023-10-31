@@ -5,13 +5,15 @@ import { visualizer } from 'rollup-plugin-visualizer'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import UnoCSS from 'unocss/vite'
+import { configMockPlugin } from './mock'
 
-export function getPluginsList(command: string) {
+export function getPluginsList(command: string, viteEnv: ViteEnv) {
   console.log(command, 'command')
 
   //  当前运行的 npm script 命令名称
   const lifecycle = process.env.npm_lifecycle_event
   return [
+    // vue 宏
     VueMacros({
       defineOptions: false,
       defineModels: false,
@@ -53,9 +55,10 @@ export function getPluginsList(command: string) {
       ],
     }),
 
-    // https://github.com/antfu/unocss
-    // see uno.config.ts for config
+    // UnoCSS https://github.com/antfu/unocss 查看 uno.config.ts 相关配置
     UnoCSS(),
+    //  mock
+    viteEnv.VITE_APP_USE_MOCK ? configMockPlugin() : null,
     // 打包分析
     lifecycle === 'build'
       ? visualizer({ open: true, brotliSize: true, filename: 'report.html' })

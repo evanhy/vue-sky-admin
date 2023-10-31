@@ -1,11 +1,14 @@
 import type { FormInstance } from 'element-plus'
+import { fetchLogin } from '@/api/auth'
+import { removeToken, setToken } from '@/utils/auth'
+import router from '@/router'
+
+interface LoginForm {
+  username: string
+  password: string
+}
 
 export const useLogin = () => {
-  interface LoginForm {
-    username: string
-    password: string
-  }
-  // 111
   const loginRef = ref(null as unknown as FormInstance)
   //   表单项
   const loginForm = ref<LoginForm>({
@@ -22,7 +25,6 @@ export const useLogin = () => {
     ],
   })
 
-  const router = useRouter()
   const login = async (values: LoginForm) => {
     try {
       if (!loginRef.value)
@@ -32,11 +34,18 @@ export const useLogin = () => {
         ElMessage.error('用户名或密码错误')
         return
       }
+      const res = await fetchLogin(values)
+      setToken(res.data.token)
       await router.push('/')
     }
     catch (e) {
       return e
     }
+  }
+  // 退出登录
+  const logout = async () => {
+    removeToken()
+    await router.push('/login')
   }
 
   return {
@@ -44,5 +53,6 @@ export const useLogin = () => {
     loginForm,
     loginRules,
     login,
+    logout,
   }
 }

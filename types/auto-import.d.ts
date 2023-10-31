@@ -57,7 +57,7 @@ declare global {
   const isElement: typeof import('../src/utils/is')['isElement']
   const isEmpty: typeof import('../src/utils/is')['isEmpty']
   const isExternal: typeof import('../src/utils/is')['isExternal']
-  const isFunction: typeof import('../src/utils/typeCheck')['isFunction']
+  const isFunction: typeof import('../src/utils/is')['isFunction']
   const isNull: typeof import('../src/utils/is')['isNull']
   const isNullOrUndef: typeof import('../src/utils/is')['isNullOrUndef']
   const isNullOrWhitespace: typeof import('../src/utils/is')['isNullOrWhitespace']
