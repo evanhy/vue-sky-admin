@@ -2,6 +2,10 @@
 defineOptions({
   name: 'Home',
 })
+
+lStorage.set('name', 'zhangsan')
+
+console.log(lStorage.get('name'))
 </script>
 
 <template>

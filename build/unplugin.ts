@@ -34,7 +34,8 @@ export function getPluginsList(command: string) {
       dts: 'types/auto-import.d.ts', // 生成的dts文件
       dirs: [ // 自动导入的模块的目录
         './src/hooks',
-        './src/utils',
+        // src/utils 文件夹下所有的文件包括子文件夹
+        './src/utils/**',
       ],
       resolvers: [
         ElementPlusResolver(),
