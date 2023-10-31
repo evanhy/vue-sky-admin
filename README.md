@@ -37,7 +37,6 @@ pnpm run up
 ### commitlint
 > 提交代码时的规范名称检查
 
-
 ### commmit规范
 > 本项目 commit 必须遵循下面的规范
 
@@ -52,3 +51,10 @@ pnpm run up
 + chore:  其他杂项修改
 + revert:  回滚到上一版本
 + perf:  性能优化
+
+### rollup-plugin-visualizer
+> 打包检测
+
+### vite-plugin-mock
+> mock数据
+
