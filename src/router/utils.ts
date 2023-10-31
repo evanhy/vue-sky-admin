@@ -72,6 +72,7 @@ const handleDynamicRoutes = (routes: any[]) => {
 }
 // 菜单格式的数组
 const constantMenus = handleDynamicRoutes(dynamicRoutes[0].children)
+
 // 合并 静态路由 和 动态路由
 const routes = [...staticRoutes, ...dynamicRoutes]
 export {

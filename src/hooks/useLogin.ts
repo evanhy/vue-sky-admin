@@ -1,12 +1,19 @@
 import type { FormInstance } from 'element-plus'
+import { StorageSerializers } from '@vueuse/core'
 import { fetchLogin } from '@/api/auth'
 import { removeToken, setToken } from '@/utils/auth'
 import router from '@/router'
+import { getUsers } from '@/api/user'
 
 interface LoginForm {
   username: string
   password: string
 }
+
+// 用户信息
+const user = useStorage('user', null, undefined, {
+  serializer: StorageSerializers.object,
+})
 
 export const useLogin = () => {
   const loginRef = ref(null as unknown as FormInstance)
@@ -25,6 +32,22 @@ export const useLogin = () => {
     ],
   })
 
+  const getUserInfo = async () => {
+    try {
+      const res = await getUsers()
+      if (res.code === 200) {
+        user.value = res.data
+        return Promise.resolve(res.data)
+      }
+      else {
+        return Promise.reject(res)
+      }
+    }
+    catch (e) {
+      return Promise.reject(e)
+    }
+  }
+
   const login = async (values: LoginForm) => {
     try {
       if (!loginRef.value)
@@ -35,15 +58,20 @@ export const useLogin = () => {
         return
       }
       const res = await fetchLogin(values)
-      setToken(res.data.token)
-      await router.push('/')
+      if (res.code === 200) {
+        setToken(res.data.token)
+        await getUserInfo()
+        await router.push('/')
+      }
     }
     catch (e) {
       return e
     }
   }
+
   // 退出登录
   const logout = async () => {
+    user.value = null
     removeToken()
     await router.push('/login')
   }
@@ -54,5 +82,7 @@ export const useLogin = () => {
     loginRules,
     login,
     logout,
+    getUserInfo,
+    user,
   }
 }

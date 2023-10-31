@@ -9,6 +9,7 @@ export function reqResolve(config: InternalAxiosRequestConfig) {
   // 防止缓存，给get请求加上时间戳
   if (config.method === 'get')
     config.params = { ...config.params, t: new Date().getTime() }
+
   // 白名单不需要token
   if (whiteList.some(v => config.url!.includes(v))) {
     return config
@@ -23,7 +24,6 @@ export function reqResolve(config: InternalAxiosRequestConfig) {
      * ! 认证方案: JWT Bearer
      */
     config.headers.Authorization = config.headers.Authorization || `Bearer ${token}`
-
     return config
   }
 }
@@ -50,7 +50,6 @@ export function resResolve(response: AxiosResponse) {
 export function resReject(error: any) {
   if (!error || !error.response) {
     const code = error.code ?? 500
-    console.log(code, 'code')
     const messageTxt = resolveResError(code, error.message)
     message(messageTxt, { type: 'error' })
     return Promise.reject({ code, message: messageTxt, error })
