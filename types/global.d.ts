@@ -112,5 +112,6 @@ declare global {
     VITE_ROUTER_HISTORY: string
     VITE_CDN: boolean
     VITE_COMPRESSION: ViteCompression
+    VITE_PROXY: [string, string][]
   }
 }
