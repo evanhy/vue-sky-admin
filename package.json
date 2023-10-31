@@ -10,8 +10,8 @@
     "url": "https://www.huyu001.top"
   },
   "scripts": {
-    "build": "vite build",
     "dev": "vite",
+    "build": "rimraf dist && vite build",
     "lint": "eslint --cache --max-warnings 0  \"{src,mock,build}/**/*.{vue,js,ts,tsx}\" --fix",
     "typecheck": "vue-tsc --noEmit",
     "preview": "vite preview",
@@ -47,6 +47,8 @@
     "jsdom": "^22.1.0",
     "lint-staged": "^14.0.1",
     "pnpm": "^8.7.6",
+    "rimraf": "^5.0.5",
+    "rollup-plugin-visualizer": "^5.9.2",
     "sass": "^1.68.0",
     "sass-loader": "^13.3.2",
     "taze": "^0.11.2",
