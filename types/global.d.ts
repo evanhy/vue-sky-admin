@@ -29,13 +29,13 @@ declare global {
     VITE_CDN: boolean
     // 是否启用Gzip压缩
     VITE_COMPRESSION: ViteCompression
-    // proxy代理配置
-    VITE_PROXY: [string, string][]
     // baseApi
     VITE_APP_BASE_API: string
     // baseApiTest
     VITE_APP_BASE_API_TEST: string
     // 是否使用mock
     VITE_APP_USE_MOCK: boolean
+    // 是否使用代理
+    VITE_USE_PROXY: boolean
   }
 }

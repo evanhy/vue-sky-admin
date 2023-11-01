@@ -5,7 +5,7 @@ import type { ConfigEnv, UserConfigExport } from 'vite'
 import { loadEnv } from 'vite'
 import { getPluginsList } from './build/unplugin'
 import { warpperEnv } from './build'
-import { createProxy } from './build/utils'
+import { PROXY_CONFIG } from './build/constant'
 
 /** 当前执行node命令时文件夹的地址（工作目录） */
 const root: string = process.cwd()
@@ -15,7 +15,7 @@ const root: string = process.cwd()
 // https://github.com/KYX1234/Element-Admin/blob/master/vite.config.ts
 export default ({ command, mode }: ConfigEnv): UserConfigExport => {
   const viteEnv = warpperEnv(loadEnv(mode, root))
-  const { VITE_PORT, VITE_PROXY } = viteEnv
+  const { VITE_PORT, VITE_USE_PROXY } = viteEnv
 
   return {
     resolve: {
@@ -30,7 +30,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
       // 主机名
       host: '0.0.0.0',
       // 本地开发跨域代理 https://cn.vitejs.dev/config/server-options.html#server-proxy
-      proxy: createProxy(VITE_PROXY),
+      proxy: VITE_USE_PROXY ? PROXY_CONFIG : {},
     },
     plugins: getPluginsList(command, viteEnv),
 
