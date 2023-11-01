@@ -1,8 +1,8 @@
 // 全局路由类型声明
-
 import { type RouteComponent, type RouteLocationNormalized } from 'vue-router'
 import type { FunctionalComponent } from 'vue'
 
+export {}
 declare global {
   interface ToRouteType extends RouteLocationNormalized {
     meta: CustomizeRouteMeta

@@ -8,6 +8,7 @@ import UnoCSS from 'unocss/vite'
 import { configMockPlugin } from './mock'
 
 export function getPluginsList(command: string, viteEnv: ViteEnv) {
+  console.log(command, 'command')
   //  当前运行的 npm script 命令名称
   const lifecycle = process.env.npm_lifecycle_event
   return [
