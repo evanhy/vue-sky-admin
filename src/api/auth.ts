@@ -1,14 +1,28 @@
-export const fetchLogin = (data: any) => {
-  return request({
-    url: '/auth/login',
-    method: 'post',
-    data,
-  })
+/* 登录接口参数类型 */
+import type { BaseResult } from '@/utils/http/types'
+
+export interface LoginData {
+  username: string
+  password: string
+}
+
+/* 登录接口返回值类型 */
+export interface LoginRes {
+  token: string
+}
+
+/* 用户信息接口返回值类型 */
+export interface UserInfoRes {
+  id: string
+  username: string
+  avatar: string
+  description: string
+}
+
+export const fetchLogin = (data: LoginData) => {
+  return http.request<BaseResult<LoginRes>>('post', '/auth/login', { data })
 }
 
 export const refreshToken = () => {
-  return request({
-    url: '/auth/refreshToken',
-    method: 'post',
-  })
+  return http.request('post', '/auth/refreshToken')
 }

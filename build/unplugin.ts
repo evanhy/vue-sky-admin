@@ -34,10 +34,12 @@ export function getPluginsList(command: string, viteEnv: ViteEnv) {
         '@vueuse/core',
       ],
       dts: 'types/auto-import.d.ts', // 生成的dts文件
-      dirs: [ // 自动导入的模块的目录
-        './src/hooks',
-        // src/utils 文件夹下所有的文件包括子文件夹
-        './src/utils/**',
+      dirs: [
+        // 自动导入的模块的目录
+        './src/hooks/*.ts',
+        // src/utils 文件夹下所有的文件, 不包含子目录
+        './src/utils/*.ts',
+        './src/utils/**/index.ts',
       ],
       resolvers: [
         ElementPlusResolver(),

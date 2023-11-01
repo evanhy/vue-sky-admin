@@ -8,7 +8,7 @@ const prefixKey = 'Vue_Sky_Admin_'
  * @param [option.prefixKey] - 用于在存储键名前添加的前缀。
  * @returns 本地存储工具对象
  */
-export const createLocalStorage = function (option: { prefixKey?: string } = {}) {
+const createLocalStorage = function (option: { prefixKey?: string } = {}) {
   return createStorage({
     prefixKey: option.prefixKey || '',
     storage: localStorage,
@@ -21,7 +21,7 @@ export const createLocalStorage = function (option: { prefixKey?: string } = {})
  * @param [option.prefixKey] - 用于在存储键名前添加的前缀。
  * @returns 会话存储工具对象。
  */
-export const createSessionStorage = function (option: { prefixKey?: string } = {}) {
+const createSessionStorage = function (option: { prefixKey?: string } = {}) {
   return createStorage({
     prefixKey: option.prefixKey || '',
     storage: sessionStorage,

@@ -58,10 +58,12 @@ export const useLogin = () => {
         return
       }
       const res = await fetchLogin(values)
+
       if (res.code === 200) {
         setToken(res.data.token)
         await getUserInfo()
         await router.push('/')
+        message('登录成功', { type: 'success' })
       }
     }
     catch (e) {

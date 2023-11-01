@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import { routes } from './utils'
 import { getToken } from '@/utils/auth'
 import { useLogin } from '@/hooks/useLogin'
+import NProgress from '@/utils/nprogress'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -12,6 +13,7 @@ const router = createRouter({
 const WHITE_LIST = ['/login', '/404']
 router.beforeEach(async (to: ToRouteType, from, next) => {
   const token = getToken()
+  NProgress.start()
   //  有 token 的操作
   if (token) {
     // 有 token 跳转 login 不让跳转
@@ -20,7 +22,7 @@ router.beforeEach(async (to: ToRouteType, from, next) => {
     }
     else {
       const { user, getUserInfo, logout } = useLogin()
-      if (user.value.id) {
+      if (user.value && user.value.id) {
         // 有用户信息 放行
         next()
       }
@@ -43,4 +45,7 @@ router.beforeEach(async (to: ToRouteType, from, next) => {
   }
 })
 
+router.afterEach(() => {
+  NProgress.done()
+})
 export default router

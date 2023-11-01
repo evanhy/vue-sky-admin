@@ -1,3 +1,4 @@
+import type { MockMethod } from 'vite-plugin-mock'
 import { resolveToken } from '../utils'
 
 interface Token {
@@ -10,14 +11,6 @@ const token: Token = {
   editor: 'editor',
 }
 
-interface ApiResponse {
-  code: number
-  data?: {
-    token: string
-  }
-  message?: string
-}
-
 interface RequestBody {
   username: 'admin' | 'editor'
 }
@@ -26,13 +19,7 @@ interface RequestHeaders {
   authorization?: string
 }
 
-interface Route {
-  url: string
-  method: 'post'
-  response: (args: { body: RequestBody; headers: RequestHeaders }) => ApiResponse
-}
-
-const routes: Route[] = [
+export default [
   {
     url: '/api/auth/login',
     method: 'post',
@@ -40,6 +27,7 @@ const routes: Route[] = [
       if (['admin', 'editor'].includes(body.username || '')) {
         return {
           code: 200,
+          message: 'success',
           data: {
             token: token[body.username],
           },
@@ -59,12 +47,11 @@ const routes: Route[] = [
     response: ({ headers }: { headers?: RequestHeaders }) => {
       return {
         code: 200,
+        message: 'success',
         data: {
           token: resolveToken(headers?.authorization || ''),
         },
       }
     },
   },
-]
-
-export default routes
+] as MockMethod[]

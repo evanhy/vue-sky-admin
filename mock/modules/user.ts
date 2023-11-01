@@ -28,12 +28,13 @@ const users: Record<string, any> = {
 }
 export default [
   {
-    url: '/api/users',
+    url: '/api/user',
     method: 'get',
     response: ({ headers }: { headers: RequestHeaders }) => {
       const token = resolveToken(headers?.authorization) || 'guest'
       return {
         code: 200,
+        message: 'success',
         data: {
           ...(users[token] || users.guest),
         },

@@ -1,5 +1,4 @@
 import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios'
-import { getToken } from '@/utils/auth'
 
 // 请求白名单
 const whiteList = ['/auth/login', '/auth/refreshToken']
