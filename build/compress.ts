@@ -4,7 +4,7 @@ import { isArray } from '../src/utils/is'
 
 export const configCompressPlugin = (
   compress: ViteCompression,
-): Plugin | Plugin[] => {
+): Plugin | Plugin[] | null => {
   if (compress === 'none')
     return null
 
