@@ -28,7 +28,7 @@ declare global {
     // 是否启用CDN
     VITE_CDN?: boolean
     // 是否启用Gzip压缩
-    VITE_COMPRESSION?: ViteCompression
+    VITE_COMPRESSION: ViteCompression
     // baseApi
     VITE_APP_BASE_API?: string
     // baseApiTest

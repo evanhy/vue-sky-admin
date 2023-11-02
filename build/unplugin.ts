@@ -6,9 +6,13 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import UnoCSS from 'unocss/vite'
 import { configMockPlugin } from './mock'
+import { configCompressPlugin } from './compress'
 
 export function getPluginsList(command: string, viteEnv: ViteEnv) {
-  console.log(command, 'command')
+  // mode 是 vite 的运行模式，可选值为：development 或 production
+  // command  serve | build 开发环境为 serve，生产环境为 build
+  // viteEnv 是当前环境变量
+
   //  当前运行的 npm script 命令名称
   const lifecycle = process.env.npm_lifecycle_event
   return [
@@ -59,7 +63,10 @@ export function getPluginsList(command: string, viteEnv: ViteEnv) {
     // UnoCSS https://github.com/antfu/unocss 查看 uno.config.ts 相关配置
     UnoCSS(),
     //  mock
-    viteEnv.VITE_APP_USE_MOCK ? configMockPlugin() : null,
+    viteEnv.VITE_APP_USE_MOCK ? configMockPlugin(command) : null,
+
+    configCompressPlugin(viteEnv.VITE_COMPRESSION),
+
     // 打包分析
     lifecycle === 'build'
       ? visualizer({ open: true, brotliSize: true, filename: 'report.html' })
