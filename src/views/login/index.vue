@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import cat from '@/assets/svg/cat.svg'
 import Motion from '@/utils/motion'
-import TypeIt from '@/components/Typeit'
 
 const { loginRef, loginForm, loginRules, login } = useLogin()
 </script>
@@ -21,7 +20,7 @@ const { loginRef, loginForm, loginRules, login } = useLogin()
       >
         <Motion>
           <h1 class="my-10 text-4xl font-bold text-gray">
-            <TypeIt :values="['SKYADMIN']" :cursor="false" :speed="150" />
+            <type-it :values="['SKYADMIN']" :cursor="false" :speed="150" />
           </h1>
         </Motion>
         <Motion :delay="100">

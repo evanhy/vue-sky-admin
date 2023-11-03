@@ -4,7 +4,6 @@ import AutoImport from 'unplugin-auto-import/vite'
 import { visualizer } from 'rollup-plugin-visualizer'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
-import UnoCSS from 'unocss/vite'
 import { configMockPlugin } from './mock'
 import { configCompressPlugin } from './compress'
 
@@ -39,10 +38,10 @@ export function getPluginsList(command: string, viteEnv: ViteEnv) {
       dts: 'types/auto-import.d.ts', // 生成的dts文件
       dirs: [
         // 自动导入的模块的目录
-        './src/hooks/*.ts',
+        'src/hooks/*.ts',
         // src/utils 文件夹下所有的文件, 不包含子目录
-        './src/utils/*.ts',
-        './src/utils/**/index.ts',
+        'src/utils/*.ts',
+        'src/utils/**/index.ts',
       ],
       resolvers: [
         ElementPlusResolver(),
@@ -54,9 +53,6 @@ export function getPluginsList(command: string, viteEnv: ViteEnv) {
       dts: 'types/components.d.ts', // 生成的dts文件
       resolvers: [
         ElementPlusResolver(),
-      ],
-      dirs: [
-        './src/components',
       ],
     }),
 
