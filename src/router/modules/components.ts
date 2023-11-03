@@ -3,7 +3,6 @@ import { components } from '@/router/enums'
 export default {
   path: '/components',
   redirect: '/components/message',
-  rank: 3,
   meta: {
     title: 'Components',
     icon: 'i-carbon:list-boxes',
@@ -24,6 +23,14 @@ export default {
       component: () => import('@/views/components/Dialog.vue'),
       meta: {
         title: 'Dialog',
+      },
+    },
+    {
+      path: '/components/typeit',
+      name: 'TypeIt',
+      component: () => import('@/views/components/TypeItDemo.vue'),
+      meta: {
+        title: '打字机组件',
       },
     },
     {

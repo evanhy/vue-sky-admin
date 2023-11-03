@@ -58,3 +58,13 @@ pnpm run up
 ### vite-plugin-mock
 > mock数据
 
+### 命名规范
+> 本项目命名必须遵循下面的规范
+
+| 类型       | 命名规范       | 举例           |
+|----------|------------|--------------|
+| 文件名      | snake_case | user_info.ts |
+| 变量名      | camelCase  | userInfo     |
+| 常量名      | UPPER_CASE | USER_INFO    |
+| 组件名/文件夹名 | PascalCase | UserInfo.vue |
+| css类名    | kebab-case | user-info    |

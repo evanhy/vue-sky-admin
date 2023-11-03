@@ -1,8 +1,11 @@
+import path from 'node:path'
 import VueMacros from 'unplugin-vue-macros/vite'
 import Vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import { visualizer } from 'rollup-plugin-visualizer'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import UnoCSS from 'unocss/vite'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import Components from 'unplugin-vue-components/vite'
 import { configMockPlugin } from './mock'
 import { configCompressPlugin } from './compress'
@@ -58,9 +61,18 @@ export function getPluginsList(command: string, viteEnv: ViteEnv) {
 
     // UnoCSS https://github.com/antfu/unocss 查看 uno.config.ts 相关配置
     UnoCSS(),
+
+    createSvgIconsPlugin({
+      // 指定需要缓存的图标文件夹
+      iconDirs: [path.resolve(process.cwd(), './src/assets/svg')],
+      // 指定symbolId格式
+      symbolId: 'icon-[dir]-[name]',
+    }),
+
     //  mock
     viteEnv.VITE_APP_USE_MOCK ? configMockPlugin(command) : null,
 
+    // 打包压缩
     configCompressPlugin(viteEnv.VITE_COMPRESSION),
 
     // 打包分析
